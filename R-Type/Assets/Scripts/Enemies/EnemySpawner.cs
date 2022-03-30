@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "EnemieSpawnTrigger")
+        if(collision != null  && collision.gameObject != null && collision.gameObject.tag == "EnemieSpawnTrigger")
         {
             spawnCoroutine = StartCoroutine(Spawn());
         }
